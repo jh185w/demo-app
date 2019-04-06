@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  main:
+    allow-bean-definition-overriding: true
+
+eureka:
+  instance:
+    hostname: localhost
+    preferIpAddress: false
+  client:
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8081/eureka}
+    healthcheck:
+      enabled: true
+
+zuul:
+  prefix: /api
+  sensitiveHeaders: Cookie,Set-Cookie
+  addProxyHeaders: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: routes, health, env, configprops, info

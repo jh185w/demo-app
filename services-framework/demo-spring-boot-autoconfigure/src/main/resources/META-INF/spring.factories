@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.sandbox.autoconfigure.jms.CustomJmsAutoConfiguration,\
+com.sandbox.autoconfigure.web.CustomWebMvcAutoConfiguration
